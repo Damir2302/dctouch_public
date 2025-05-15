@@ -62,7 +62,7 @@
         <div class="switcher_mobile" data-w-id="d15f2b10-57e7-8f99-2691-dd1583c0351d">
           <div class="theme_switcher_mb"></div>
         </div><a class="brand-2 w-nav-brand" href="#home"><img class="logo_dark_theme" src="images/DCLOGO-1.svg" loading="eager" alt="логотип компании dctouch"><img class="logo_light_theme" src="images/logo_light_theme.svg" loading="lazy" alt="логотип компании dctouch светлая тема"></a>
-        <nav class="w-nav-menu" role="navigation"><a class="nav-link-2 w-nav-link" href="#two">Разработка решений</a><a class="nav-link-3 w-nav-link" href="#three">Цифровой арт и Fashion</a><a class="nav-link-4 w-nav-link" href="#four">Медиа и ритейл</a><a class="nav-link-5 w-nav-link" href="#six">Выставки и музеи</a><a class="nav-link-6 w-nav-link" href="#seven">Арт Контент</a><a class="nav-link-7 w-nav-link" href="https://www.dctouch.ru/" target="_blank">Основной сайт</a><a class="nav-link-9 w-nav-link" href="#contact">Контакты</a><a class="nav-link-10 w-nav-link" href="#contact">Заказать</a></nav>
+        <nav class="w-nav-menu" role="navigation"><a class="nav-link-2 w-nav-link" href="#vr-presentation">Презентации</a><a class="nav-link-3 w-nav-link" href="#vr_auditory">Аудитории</a><a class="nav-link-4 w-nav-link" href="#vr_multiplatform">Метавселенные</a><a class="nav-link-5 w-nav-link" href="#five">Архитектура</a><a class="nav-link-6 w-nav-link" href="#vr_presentations">Тренажеры</a><a class="nav-link-7 w-nav-link" href="https://www.dctouch.ru/" target="_blank">Основной сайт</a><a class="nav-link-9 w-nav-link" href="#contact">Контакты</a><a class="nav-link-10 w-nav-link" href="#contact">Заказать</a></nav>
         <div class="menu-button-2 w-nav-button">
           <div class="lottie-animation-2" data-is-ix2-target="1" data-w-id="4bb331c8-2e45-31fb-65f6-3c9f8086ead4" data-animation-type="lottie" data-src="documents/Animation---1712669681226.json" data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="1.65" data-duration="0" data-ix2-initial-state="1"></div>
           <div class="lottie-animation_light" data-is-ix2-target="1" data-w-id="90af1498-d043-e3e7-8144-8f446785c487" data-animation-type="lottie" data-src="documents/Animation---1712669498225-1.json" data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-duration="0" data-ix2-initial-state="1"></div>
@@ -657,5 +657,120 @@
             activeClass: 'active-link' // class of the active state added to anchorButton
         });
     })();
+    
+  </script>
+  <script>
+    const images = [
+        {
+            src: "./images/blocks/bab324a5410138a6699501b7de9a556e.webp",
+            srcset: "./images/blocks/bab324a5410138a6699501b7de9a556e.webp 500w, ./images/blocks/bab324a5410138a6699501b7de9a556e.webp 800w, ./images/blocks/bab324a5410138a6699501b7de9a556e.webp 1080w, ./images/blocks/bab324a5410138a6699501b7de9a556e.webp 1600w, ./images/blocks/bab324a5410138a6699501b7de9a556e.webp 2014w"
+        },
+        {
+            src: "./images/slider/1.jpg",
+            srcset: "./images/slider/1.jpg 500w, ./images/slider/1.jpg 800w, ./images/slider/1.jpg 1080w, ./images/slider/1.jpg 1600w, ./images/slider/1.jpg 2014w"
+        },
+        {
+            src: "./images/slider/2.jpg",
+            srcset: "./images/slider/2.jpg 500w, ./images/slider/2.jpg 800w, ./images/slider/2.jpg 1080w, ./images/slider/2.jpg 1600w, ./images/slider/2.jpg 2014w"
+        },
+        {
+            src: "./images/slider/3.jpg",
+            srcset: "./images/slider/3.jpg 500w, ./images/slider/3.jpg 800w, ./images/slider/3.jpg 1080w, ./images/slider/3.jpg 1600w, ./images/slider/3.jpg 2014w"
+        },
+        {
+            src: "./images/slider/4.jpg",
+            srcset: "./images/slider/4.jpg 500w, ./images/slider/4.jpg 800w, ./images/slider/4.jpg 1080w, ./images/slider/4.jpg 1600w, ./images/slider/4.jpg 2014w"
+        },
+        {
+            src: "./images/slider/5.jpg",
+            srcset: "./images/slider/5.jpg 500w, ./images/slider/5.jpg 800w, ./images/slider/5.jpg 1080w, ./images/slider/5.jpg 1600w, ./images/slider/5.jpg 2014w"
+        }
+    
+    ];
+    
+    
+    
+    
+    let index = 0;
+    let slider;
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        slider = document.querySelector(".slider-images");
+        if (!slider) {
+            console.error("Элемент .slider-images не найден");
+            return;
+        }
+    });
+    
+    function nextImage() {
+        if (!slider) return;
+        index = (index + 1) % images.length;
+        console.log(index)
+        updateImage();
+    }
+    
+    function prevImage() {
+        if (!slider) return;
+        index = (index - 1 + images.length) % images.length;
+        updateImage();
+    }
+    
+    function updateImage() {
+        console.log("Обновление изображения:", slider);
+        if (!slider) {
+            console.error("Элемент .slider-images не найден!");
+            return;
+        }
+        slider.src = images[index].src;
+        slider.srcset = images[index].srcset;
+        console.log("Изображение обновлено:", images[index].src);
+    }
+    
+  </script>
+  <script>
+    const imagesMobile = [
+        {
+            src: "./images/blocks/bab324a5410138a6699501b7de9a556e.webp",
+            srcset: "./images/blocks/bab324a5410138a6699501b7de9a556e.webp 500w, ./images/blocks/bab324a5410138a6699501b7de9a556e.webp 800w, ./images/blocks/bab324a5410138a6699501b7de9a556e.webp 1080w, ./images/blocks/bab324a5410138a6699501b7de9a556e.webp 1600w, ./images/blocks/bab324a5410138a6699501b7de9a556e.webp 2014w"
+        },
+        {
+            src: "./images/slider/1.jpg",
+            srcset: "./images/slider/1.jpg 500w, ./images/slider/1.jpg 800w, ./images/slider/1.jpg 1080w, ./images/slider/1.jpg 1600w, ./images/slider/1.jpg 2014w"
+        },
+        {
+            src: "./images/slider/2.jpg",
+            srcset: "./images/slider/2.jpg 500w, ./images/slider/2.jpg 800w, ./images/slider/2.jpg 1080w, ./images/slider/2.jpg 1600w, ./images/slider/2.jpg 2014w"
+        },
+        {
+            src: "./images/slider/3.jpg",
+            srcset: "./images/slider/3.jpg 500w, ./images/slider/3.jpg 800w, ./images/slider/3.jpg 1080w, ./images/slider/3.jpg 1600w, ./images/slider/3.jpg 2014w"
+        },
+        {
+            src: "./images/slider/4.jpg",
+            srcset: "./images/slider/4.jpg 500w, ./images/slider/4.jpg 800w, ./images/slider/4.jpg 1080w, ./images/slider/4.jpg 1600w, ./images/slider/4.jpg 2014w"
+        },
+        {
+            src: "./images/slider/5.jpg",
+            srcset: "./images/slider/5.jpg 500w, ./images/slider/5.jpg 800w, ./images/slider/5.jpg 1080w, ./images/slider/5.jpg 1600w, ./images/slider/5.jpg 2014w"
+        }
+    ];
+    
+    let indexMobile = 0;
+    const sliderMobile = document.querySelector(".slider-images-mobile");
+    
+    function nextImageMobile() {
+        indexMobile = (indexMobile + 1) % imagesMobile.length; // Циклическая смена
+        updateImageMobile();
+    }
+    
+    function prevImageMobile() {
+        indexMobile = (indexMobile - 1 + imagesMobile.length) % imagesMobile.length; // Циклическая смена назад
+        updateImageMobile();
+    }
+    
+    function updateImageMobile() {
+        sliderMobile.src = imagesMobile[indexMobile].src;
+        sliderMobile.srcset = imagesMobile[indexMobile].srcset;
+    }
   </script>
 </html>
